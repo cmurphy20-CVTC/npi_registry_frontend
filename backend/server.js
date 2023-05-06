@@ -41,7 +41,7 @@ app.post("/", function(req, res){
     // const limit = "50";
     // const maxLimit = "1200";
 
-    const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiNumber + "&enumeration_type=&taxonomy_description=" + taxonomy_description + "&name_purpose=&first_name=" + first_name + "&last_name= " + last_name + "&organization_name=&city=" + city + "&state=" + state +"&postal_code=" + zip_code + "&country_code=US&limit=&skip=&pretty=&version=2.1"
+    const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiNumber + "&enumeration_type=&taxonomy_description=" + taxonomy_description + "&name_purpose=&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=" + city + "&state=" + state +"&postal_code=" + zip_code + "&country_code=US&limit=&skip=&pretty=&version=2.1"
     
    
    try {
@@ -51,7 +51,7 @@ app.post("/", function(req, res){
       response.on("data", function(data){
           const npiData = JSON.parse(data)
          
-          console.log(npiData)
+          console.log(npiData.result_count)
 
           if (npiData.result_count === 0) {
             
@@ -59,6 +59,8 @@ app.post("/", function(req, res){
           } else {
            res.render("results", {resultData: npiData});
         }
+
+        
   })
 
  

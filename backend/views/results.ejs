@@ -2,7 +2,7 @@
 
 <% resultData.results.forEach(function(result) { %>
 
-    <p><%= result.number %></p>
+    <p><a href="https://npiregistry.cms.hhs.gov/provider-view/<%= result.number %>"><%= result.number %></a></p>
 
     <p><%= result.basic.first_name %> <%= result.basic.last_name %></p>
 
