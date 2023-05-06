@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+
+<% resultData.results.forEach(function(result) { %>
+
+    <p><%= result.number %></p>
+
+    <p><%= result.basic.first_name %> <%= result.basic.last_name %></p>
+
+    <p><%= result.enumeration_type %></p>
+
+    <p><%= result.addresses[0].address_1 %>, <%= result.addresses[0].city %>,  <%= result.addresses[0].state %>, <%= result.addresses[0].postal_code %></p>
+
+    <p><%= result.addresses[0].telephone_number %></p>
+
+    <p><%= result.taxonomies[0].desc.split(",", 1) %></p>
+
+
+<% }) %> 
+
+
+
+<%- include("partials/footer"); -%>
