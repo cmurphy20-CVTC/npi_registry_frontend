@@ -2,7 +2,12 @@
 
 <% resultData.results.forEach(function(result) { %>
 
-    <p><a href="https://npiregistry.cms.hhs.gov/provider-view/<%= result.number %>"><%= result.number %></a></p>
+    <form action="/npiSearch" method="post">
+        <input type="hidden" name="npi" value="<%= result.number %>">
+        <button type="submit"><%= result.number %></button>
+    </form>
+
+    <!-- <p><a href="https://npiregistry.cms.hhs.gov/provider-view/<%= result.number %>"><%= result.number %></a></p> -->
 
     <p><%= result.basic.first_name %> <%= result.basic.last_name %></p>
 

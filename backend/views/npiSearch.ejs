@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+  <h2>Provider Information for <%= npiData.number %></h2>
+
+  <form action="/backToResults" method="post">
+    <button type="submit">Back</button>
+  </form>
+  <div><a class="btn btn-light btn-lg" href="/results" role="button">Back</a></div>
+
+  <h3></h3>
+
+
+
+<p><%= npiData.number %></p>
+
+<%- include("partials/footer"); -%>
