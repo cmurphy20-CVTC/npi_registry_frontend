@@ -71,7 +71,7 @@ app.post("/npiSearch", function(req, res) {
 
     console.log(searchedNPIData.results[0].basic)
 
-    res.render("npiSearch", {npiData: searchedNPIData.results});
+    res.render("npiSearch", {npiData: searchedNPIData.results[0]});
 
   }).catch((error) => {
 

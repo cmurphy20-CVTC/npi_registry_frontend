@@ -5,12 +5,71 @@
   <form action="/backToResults" method="post">
     <button type="submit">Back</button>
   </form>
-  <div><a class="btn btn-light btn-lg" href="/results" role="button">Back</a></div>
+  
+  <h3><%= npiData.basic.organization_name %></h3>
 
-  <h3></h3>
+  <h3>Organization Subpart: <%= npiData.basic.organizational.subpart %></h3>
+
+  <p><%= npiData.number %></p>
+
+  <p>Last Updated: <%= npiData.basic.last_updated %></p>
+
+  <h3>Details</h3>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>NPI</td>
+      <td><%= npiData.number %></td>
+    </tr>
+    <tr>
+      <td>Enumeration Date</td>
+      <td><%= npiData.basic.enumeration_date %></td>
+    </tr>
+    <tr>
+      <td>NPI Type</td>
+      <td><%= npiData.enumeration_type %></td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Authorized Office Information</td>
+      <td>Name: <%= npiData.basic.authorized_offical_first_name %> <%= npiData.basic.authorized_offical_middle_name %> <%= npiData.basic.authorized_offical_last_name %>
+          Title: <%= authorized_offical_title_or_position %>
+          Phone: <%= authorized_offical_telephone_number %>
+      </td>
+    </tr>
+    <tr>
+      <td>Mailing Address</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Primary Practice Address</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Secondary Practice Address</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Health Information Exchange</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Other Identifiers</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Taxonomy</td>
+      <td></td>
+    </tr>
 
 
-
-<p><%= npiData.number %></p>
+  </table>
 
 <%- include("partials/footer"); -%>
