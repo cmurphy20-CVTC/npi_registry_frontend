@@ -44,17 +44,25 @@ app.post("/registrySearch", function(req, res){
   const state = req.body.state;
   const zip_code = req.body.zipCode;
 
-  const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiNumber + "&enumeration_type=&taxonomy_description=" + taxonomy_description + "&name_purpose=&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=" + city + "&state=" + state +"&postal_code=" + zip_code + "&country_code=US&limit=5&skip=&pretty=&version=2.1";
+  const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiNumber + "&enumeration_type=&taxonomy_description=" + taxonomy_description + "&name_purpose=&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=" + city + "&state=" + state +"&postal_code=" + zip_code + "&limit=10&skip=&pretty=&version=2.1";
 
-  // localStorage.setItem("returnURL", url);
+  localStorage.setItem("searchURL", url);
+
+  res.json({search: url})
+
+})
+
+app.get("/registryResults", function(req, res) {
+
+  let url = localStorage.getItem("searchURL");
 
   axios.get(url).then((response) => {
 
-    const npiData = response.data.results;
+    const npiData = response.data;
 
-    console.log(npiData)
+    res.send(npiData)
 
-    res.json(npiData)
+    console.log(npiData.results[0])
 
   }).catch((error) => {
 
@@ -62,15 +70,13 @@ app.post("/registrySearch", function(req, res){
 
   })
 
-  
-
 })
 
 
 app.post("/npiSearch", function(req, res) {
   const npiResult = req.body.npi;
 
-  const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiResult + "&country_code=US&limit=1&skip=&pretty=&version=2.1";
+  const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiResult + "&country_code=US&limit=10&skip=&pretty=&version=2.1";
 
   axios.get(url).then((response) => {
 
