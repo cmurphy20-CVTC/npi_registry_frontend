@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
+const cors = require("cors");
 const ejs = require("ejs");
 var LocalStorage = require('node-localstorage').LocalStorage,
 localStorage = new LocalStorage('./scratch');
@@ -11,7 +12,9 @@ const app = express();
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors())
+
+app.use(bodyParser.json());
 
 app.get("/", function(req, res){
 
@@ -98,10 +101,42 @@ app.post("/backToResults", function(req, res){
 
 })
 
+app.post("/npi-test", function(req, res) {
+
+  console.log(req.body)
+
+  const first_name = req.body.firstName;
+  const last_name = req.body.lastName;
+
+  const url = "https://npiregistry.cms.hhs.gov/api/?&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=&state=&postal_code=&country_code=US&limit=1&skip=&pretty=&version=2.1";
+
+  axios.get(url).then((response) => {
+
+    const searchedNPIData = response.data;
+
+    console.log(searchedNPIData)
+
+   
+
+  }).catch((error) => {
+
+    console.log(error)
+
+  })
+
+ 
+
+
+
+  res.json({"message":"form submitted"})
+
+
+})
 
 
 
 
-app.listen(3000, function(){
-    console.log("The server is running on port 3000.")
+
+app.listen(5000, function(){
+    console.log("The server is running on port 5000.")
 })
