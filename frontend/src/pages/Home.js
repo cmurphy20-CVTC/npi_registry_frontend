@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
-
+import ResultsList from "../components/ResultsList";
 
 function Home() {
   const [data, setData] = useState({
@@ -44,18 +44,7 @@ const [refreshKey, setRefreshKey] = useState(0)
       const url = "http://localhost:5000/registrySearch";
       const {data: res} = await axios.post(url, data)
       console.log(res.message)
-      //  console.log(data) // data from req
-
-      // setData({
-      //   firstName: "",
-      //   lastName: "",
-      //   npiNumber: "",
-      //   taxonomyDesc: "",
-      //   city: "",
-      //   state: "",
-      //   zipCode: ""
-      // })
-
+    
       setRefreshKey(refreshKey => refreshKey +1)
 
     } catch(error) {
@@ -67,54 +56,70 @@ const [refreshKey, setRefreshKey] = useState(0)
   return(
     <div>
       <form onSubmit={handleSubmit}>
-        
-        <label htmlFor="npiNumber">NPI Number</label>
-        <input type="text" id="npiNumber" name="npiNumber" onChange={handleChange} value={data.npiNumber}></input>
-        <label htmlFor="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" onChange={handleChange} value={data.firstName}></input>
-        <label htmlFor="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" onChange={handleChange} value={data.lastName}></input>
-        <label htmlFor="taxonomyDesc">Taxonomy Description</label>
-        <input type="text" id="taxonomyDesc" name="taxonomyDesc" onChange={handleChange} value={data.taxonomyDesc}></input>
-        <label htmlFor="city">City</label>
-        <input type="text" id="city" name="city" onChange={handleChange} value={data.city}></input>
-        <label htmlFor="state">State</label>
-        <input type="text" id="state" name="state" onChange={handleChange} value={data.state}></input>
-        <label htmlFor="zipCode">Zip Code</label>
-        <input type="text" id="zipCode" name="zipCode" onChange={handleChange} value={data.zipCode}></input>
-
-        <button type="submit" value="Submit">Submit</button>
-      </form>
-
-
-      <div>
-
-      
-      {(typeof resultsData.results === 'undefined') ?
-      (
-        <p>Results will appear below</p>
-        
-      ): (
-        resultsData.results.map((result, i) => (
-          <div>
-          <p key={i}>{result.number}</p>
-            <p key={i}>{result.basic.first_name} {result.basic.last_name}</p>
-            <p key={i}>{result.enumeration_type}</p>
-            <p key={i}>{result.addresses[0].address_1}</p>
-            <p key={i}>{result.addresses[0].city}</p>
-            <p key={i}>{result.addresses[0].state}</p>
-            <p key={i}>{result.addresses[0].postal_code}</p>
-            <p key={i}>{result.taxonomies[0].desc}</p>
-            
-            
-            <p key={i}></p>
-            <p key={i}></p>
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label htmlFor="npiNumber">NPI Number</label>
+            <input type="text" class="form-control" id="npiNumber" name="npiNumber" onChange={handleChange} value={data.npiNumber}></input>
           </div>
           
-        ))
-      )}
-      </div>
-    
+            <div class="form-group col-md-2">
+              <label htmlFor="npiNumber">NPI Type</label>
+              <select class="form-control" id="npiType" name="npiType" onChange={handleChange} value={data.npiType}>
+                <option>Any</option>
+                <option>Individual</option>
+                <option>Organizarion</option>
+              </select>
+            </div>
+           
+            <div class="form-group col-md-6">
+              <label htmlFor="taxonomyDesc">Taxonomy Description</label>
+              <input type="text" class="form-control" id="taxonomyDesc" name="taxonomyDesc" onChange={handleChange} value={data.taxonomyDesc}></input>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-5"> 
+              
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" onChange={handleChange} value={data.firstName}></input>
+            </div>
+            <div class="form-group col-md-5">
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" onChange={handleChange} value={data.lastName}></input>
+            </div>            
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label htmlFor="city">City</label>
+              <input type="text" class="form-control" id="city" name="city" onChange={handleChange} value={data.city}></input>
+            </div>
+            <div class="form-group col-md-3">
+              <label htmlFor="state">State</label>
+              <input type="text" class="form-control" id="state" name="state" onChange={handleChange} value={data.state}></input>
+            </div>
+            <div class="form-group col-md-3">
+              <label htmlFor="zipCode">Zip Code</label>
+              <input type="text" class="form-control" id="zipCode" name="zipCode" onChange={handleChange} value={data.zipCode}></input>
+              </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-3">
+            <button type="submit"  class="btn btn-primary mb-2" value="Submit">Search</button>
+          
+            </div>
+
+          </div>
+
+
+            
+          
+            
+      </form>
+
+     <ResultsList resultsData={resultsData} />
+     
     </div>
   )
 }
