@@ -34,31 +34,35 @@ app.get("/npiSearch", function(req, res) {
   res.render("npiSearch");
 })
 
-app.post("/", function(req, res){
+app.post("/registrySearch", function(req, res){
     
   const npiNumber = req.body.npiNumber;
   const first_name = req.body.firstName;
   const last_name = req.body.lastName;
   const taxonomy_description = req.body.taxonomyDesc;
-  const city = req.body.cityName;
+  const city = req.body.city;
   const state = req.body.state;
   const zip_code = req.body.zipCode;
 
-  const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiNumber + "&enumeration_type=&taxonomy_description=" + taxonomy_description + "&name_purpose=&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=" + city + "&state=" + state +"&postal_code=" + zip_code + "&country_code=US&limit=200&skip=&pretty=&version=2.1";
+  const url = "https://npiregistry.cms.hhs.gov/api/?number=" + npiNumber + "&enumeration_type=&taxonomy_description=" + taxonomy_description + "&name_purpose=&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=" + city + "&state=" + state +"&postal_code=" + zip_code + "&country_code=US&limit=5&skip=&pretty=&version=2.1";
 
-  localStorage.setItem("returnURL", url);
+  // localStorage.setItem("returnURL", url);
 
   axios.get(url).then((response) => {
 
-    const npiData = response.data;
+    const npiData = response.data.results;
 
-    res.render("results", {resultData: npiData});
+    console.log(npiData)
+
+    res.json(npiData)
 
   }).catch((error) => {
 
     console.log(error)
 
   })
+
+  
 
 })
 
@@ -108,7 +112,7 @@ app.post("/npi-test", function(req, res) {
   const first_name = req.body.firstName;
   const last_name = req.body.lastName;
 
-  const url = "https://npiregistry.cms.hhs.gov/api/?&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=&state=&postal_code=&country_code=US&limit=1&skip=&pretty=&version=2.1";
+  const url = "https://npiregistry.cms.hhs.gov/api/?&first_name=" + first_name + "&last_name=" + last_name + "&organization_name=&city=&state=&postal_code=&country_code=US&limit=10&skip=&pretty=&version=2.1";
 
   axios.get(url).then((response) => {
 
@@ -116,7 +120,7 @@ app.post("/npi-test", function(req, res) {
 
     console.log(searchedNPIData)
 
-   
+   res.json(searchedNPIData)
 
   }).catch((error) => {
 
@@ -125,10 +129,6 @@ app.post("/npi-test", function(req, res) {
   })
 
  
-
-
-
-  res.json({"message":"form submitted"})
 
 
 })
