@@ -48,7 +48,7 @@ app.get("/registryResults", function(req, res) {
 
     res.send(npiData)
 
-    // console.log(npiData.results[0])
+     console.log(npiData.results[0])
 
   }).catch((error) => {
 

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import ResultsList from "../components/ResultsList";
 
+
 function Home() {
   const [data, setData] = useState({
     firstName: "",
@@ -17,7 +18,6 @@ const [resultsData, setResultsData] = useState(1)
 const [refreshKey, setRefreshKey] = useState(0)
 
   useEffect(() => {  
-    
     
       const fetchResults = async () => {
         
@@ -52,38 +52,30 @@ const [refreshKey, setRefreshKey] = useState(0)
     }
 
   } 
-  
+
   return(
     <div>
       <form onSubmit={handleSubmit}>
         <div class="form-row">
-          <div class="form-group col-md-2">
+          <div class="form-group col-md-4">
             <label htmlFor="npiNumber">NPI Number</label>
             <input type="text" class="form-control" id="npiNumber" name="npiNumber" onChange={handleChange} value={data.npiNumber}></input>
           </div>
           
-            <div class="form-group col-md-2">
-              <label htmlFor="npiNumber">NPI Type</label>
-              <select class="form-control" id="npiType" name="npiType" onChange={handleChange} value={data.npiType}>
-                <option>Any</option>
-                <option>Individual</option>
-                <option>Organizarion</option>
-              </select>
-            </div>
            
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
               <label htmlFor="taxonomyDesc">Taxonomy Description</label>
               <input type="text" class="form-control" id="taxonomyDesc" name="taxonomyDesc" onChange={handleChange} value={data.taxonomyDesc}></input>
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-5"> 
+            <div class="form-group col-md-4"> 
               
               <label htmlFor="firstName">First Name</label>
               <input type="text" class="form-control" id="firstName" name="firstName" onChange={handleChange} value={data.firstName}></input>
             </div>
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-4">
               <label htmlFor="lastName">Last Name</label>
               <input type="text" class="form-control" id="lastName" name="lastName" onChange={handleChange} value={data.lastName}></input>
             </div>            
@@ -95,7 +87,7 @@ const [refreshKey, setRefreshKey] = useState(0)
               <input type="text" class="form-control" id="city" name="city" onChange={handleChange} value={data.city}></input>
             </div>
             <div class="form-group col-md-3">
-              <label htmlFor="state">State</label>
+              <label htmlFor="state">State - Use two letters, and search with other criteria</label>
               <input type="text" class="form-control" id="state" name="state" onChange={handleChange} value={data.state}></input>
             </div>
             <div class="form-group col-md-3">
@@ -111,18 +103,16 @@ const [refreshKey, setRefreshKey] = useState(0)
             </div>
 
           </div>
-
-
-            
-          
             
       </form>
 
-     <ResultsList resultsData={resultsData} />
+     <ResultsList resultsData={resultsData} />  
      
+        
     </div>
   )
 }
+
 
 
 export default Home;

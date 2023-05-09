@@ -1,8 +1,6 @@
 import React from "react";
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
-import SearchedNPI from "./pages/SearchedNPI";
-
 
 import Footer from "./components/Footer";
 
@@ -31,12 +29,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-
-      
-
-    
-
-      <SearchedNPI />
 
       <Footer />
     
