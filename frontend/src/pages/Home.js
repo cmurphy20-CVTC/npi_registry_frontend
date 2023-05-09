@@ -87,7 +87,7 @@ const [refreshKey, setRefreshKey] = useState(0)
               <input type="text" class="form-control" id="city" name="city" onChange={handleChange} value={data.city}></input>
             </div>
             <div class="form-group col-md-3">
-              <label htmlFor="state">State - Use two letters, and search with other criteria</label>
+              <label htmlFor="state">State - Use two letters and other criteria</label>
               <input type="text" class="form-control" id="state" name="state" onChange={handleChange} value={data.state}></input>
             </div>
             <div class="form-group col-md-3">
@@ -99,7 +99,7 @@ const [refreshKey, setRefreshKey] = useState(0)
           <div class="form-row">
             <div class="form-group col-md-3">
             <button type="submit"  class="btn btn-primary mb-2" value="Submit">Search</button>
-          
+            
             </div>
 
           </div>
@@ -108,7 +108,6 @@ const [refreshKey, setRefreshKey] = useState(0)
 
      <ResultsList resultsData={resultsData} />  
      
-        
     </div>
   )
 }

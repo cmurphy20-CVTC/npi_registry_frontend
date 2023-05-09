@@ -4,7 +4,6 @@ const ResultsList = ({resultsData}) => {
   return(
     <div>
 
-      
       {(typeof resultsData.results === 'undefined') ?
       (
         <p>Results will appear below</p>
@@ -40,7 +39,6 @@ const ResultsList = ({resultsData}) => {
             
           </table>
           
-        
       )}
       
       </div>
