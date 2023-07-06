@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import ResultsList from "../components/ResultsList";
-
-
+import Nav from "../components/Nav";
 function Home() {
   const [data, setData] = useState({
     firstName: "",
@@ -55,6 +54,8 @@ const [refreshKey, setRefreshKey] = useState(0)
 
   return(
     <div>
+
+      <Nav />
       <form onSubmit={handleSubmit}>
         <div class="form-row">
           <div class="form-group col-md-4">
