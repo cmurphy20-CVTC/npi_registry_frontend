@@ -25,9 +25,16 @@ const ResultsList = ({resultsData}) => {
             <tbody>
               
               {resultsData.results.map((result, i) => (
+
                 <tr>
-                  <td key={i}><a href={"https://npiregistry.cms.hhs.gov/provider-view/" + result.number}>{result.number}</a></td>
-                  <td key={i}>{result.basic.first_name} {result.basic.last_name} {result.basic.organization_name}</td>
+                  <td key={i}>
+            
+                      <a href={"https://npiregistry.cms.hhs.gov/provider-view/" + result.number}>
+                        {result.number}
+                      </a>
+                    
+                  </td>
+                  <td key={i}>{result.basic.first_name} {result.basic.last_name} {result.basic.organization_name}</td>      
                   <td key={i}>{result.enumeration_type}</td>
                   <td key={i}>{result.addresses[0].address_1}<br></br>
                   {result.addresses[0].city}, {result.addresses[0].state}, {result.addresses[0].postal_code}</td>

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import ResultsList from "../components/ResultsList";
 import Nav from "../components/Nav";
+
 function Home() {
   const [data, setData] = useState({
     firstName: "",
@@ -100,6 +101,7 @@ const [refreshKey, setRefreshKey] = useState(0)
           <div class="form-row ">
             <div class="form-group col-md-3 offset-1">
             <button type="submit"  class="btn btn-primary mb-2" value="Submit">Search</button>
+            {/* <button type="submit"  class="btn btn-outline-primary mb-2" onCLick={onClear}>Clear</button> */}
             
             </div>
 
