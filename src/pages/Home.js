@@ -21,7 +21,7 @@ const [refreshKey, setRefreshKey] = useState(0)
     
       const fetchResults = async () => {
         
-      const response = await axios.get("http://npiregistrybackend-production.up.railway.app/registryResults")
+      const response = await axios.get("https://npiregistrybackend-production.up.railway.app/registryResults")
 
       console.log(response.data.results)
        
@@ -41,7 +41,7 @@ const [refreshKey, setRefreshKey] = useState(0)
   const handleSubmit = async(e) => {
     e.preventDefault()
     try {
-      const url = "http://npiregistrybackend-production.up.railway.app/registrySearch";
+      const url = "https://npiregistrybackend-production.up.railway.app/registrySearch";
       const {data: res} = await axios.post(url, data)
       console.log(res.message)
     
