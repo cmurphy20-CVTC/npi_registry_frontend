@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import ResultsList from "../components/ResultsList";
 import Nav from "../components/Nav";
+import ErrorBoundary from "../components/errorBoundary";
 
 function Home() {
   const [data, setData] = useState({
@@ -115,4 +116,12 @@ const [refreshKey, setRefreshKey] = useState(0)
   )
 }
 
-export default Home;
+function HomeErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Home {...props} />
+    </ErrorBoundary>
+  );
+}
+
+export default HomeErrorBoundary;
