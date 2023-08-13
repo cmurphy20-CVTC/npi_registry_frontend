@@ -11,7 +11,7 @@ const ResultsList = ({resultsData}) => {
         
       ):(
         
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col-md-2">NPI</th>
@@ -27,6 +27,7 @@ const ResultsList = ({resultsData}) => {
               
               {resultsData.results.map((result, i) => (
 
+                // eslint-disable-next-line react/jsx-key
                 <tr>
                   <td key={i}>
             

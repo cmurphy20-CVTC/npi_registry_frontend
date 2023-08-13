@@ -59,49 +59,49 @@ const [refreshKey, setRefreshKey] = useState(0)
 
       <Nav />
 
-      <form class="inputForm mb-5 pt-2" onSubmit={handleSubmit}>
-        <div class="form-row justify-content-center">
-          <div class="form-group col-md-5">
+      <form className="inputForm mb-5 pt-2" onSubmit={handleSubmit}>
+        <div className="form-row justify-content-center">
+          <div className="form-group col-md-5">
             <label htmlFor="npiNumber">NPI Number</label>
-            <input type="text" class="form-control" id="npiNumber" name="npiNumber" onChange={handleChange} value={data.npiNumber}></input>
+            <input type="text" className="form-control" id="npiNumber" name="npiNumber" onChange={handleChange} value={data.npiNumber}></input>
           </div>
           
-            <div class="form-group col-md-5">
+            <div className="form-group col-md-5">
               <label htmlFor="taxonomyDesc">Taxonomy Description</label>
-              <input type="text" class="form-control" id="taxonomyDesc" name="taxonomyDesc" onChange={handleChange} value={data.taxonomyDesc}></input>
+              <input type="text" className="form-control" id="taxonomyDesc" name="taxonomyDesc" onChange={handleChange} value={data.taxonomyDesc}></input>
             </div>
           </div>
 
-          <div class="form-row justify-content-center">
-            <div class="form-group col-md-5"> 
+          <div className="form-row justify-content-center">
+            <div className="form-group col-md-5"> 
               
               <label htmlFor="firstName">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" onChange={handleChange} value={data.firstName}></input>
+              <input type="text" className="form-control" id="firstName" name="firstName" onChange={handleChange} value={data.firstName}></input>
             </div>
-            <div class="form-group col-md-5">
+            <div className="form-group col-md-5">
               <label htmlFor="lastName">Last Name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" onChange={handleChange} value={data.lastName}></input>
+              <input type="text" className="form-control" id="lastName" name="lastName" onChange={handleChange} value={data.lastName}></input>
             </div>            
           </div>
 
-          <div class="form-row justify-content-center">
-            <div class="form-group col-md-3">
+          <div className="form-row justify-content-center">
+            <div className="form-group col-md-3">
               <label htmlFor="city">City</label>
-              <input type="text" class="form-control" id="city" name="city" onChange={handleChange} value={data.city}></input>
+              <input type="text" className="form-control" id="city" name="city" onChange={handleChange} value={data.city}></input>
             </div>
-            <div class="form-group col-md-4">
+            <div className="form-group col-md-4">
               <label htmlFor="state">State - Use two letters</label>
-              <input type="text" class="form-control" id="state" name="state" onChange={handleChange} value={data.state}></input>
+              <input type="text" className="form-control" id="state" name="state" onChange={handleChange} value={data.state}></input>
             </div>
-            <div class="form-group col-md-3">
+            <div className="form-group col-md-3">
               <label htmlFor="zipCode">Zip Code</label>
-              <input type="text" class="form-control" id="zipCode" name="zipCode" onChange={handleChange} value={data.zipCode}></input>
+              <input type="text" className="form-control" id="zipCode" name="zipCode" onChange={handleChange} value={data.zipCode}></input>
               </div>
           </div>
 
-          <div class="form-row ">
-            <div class="form-group col-md-3 offset-1">
-            <button type="submit"  class="btn btn-primary mb-2" value="Submit">Search</button>
+          <div className="form-row ">
+            <div className="form-group col-md-3 offset-1">
+            <button type="submit"  className="btn btn-primary mb-2" value="Submit">Search</button>
             {/* <button type="submit"  class="btn btn-outline-primary mb-2" onCLick={onClear}>Clear</button> */}
             
             </div>
