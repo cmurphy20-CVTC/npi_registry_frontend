@@ -6,24 +6,24 @@ const ResultsList = ({ resultsData }) => {
       {typeof resultsData.results === "undefined" ? (
         <p className="ml-8 pb-6 text-2xl">Results will appear below</p>
       ) : (
-        <table className="mx-auto w-5/6 table-auto bg-white shadow-lg">
-          <thead className="text-xl text-gray-700 uppercase  ">
+        <table className="mx-auto mb-8 w-5/6 table-auto bg-white shadow-lg">
+          <thead className="text-xl text-left text-white uppercase bg-blue-500 ">
             <tr className="">
               <th scope="col" className="px-6 py-3">NPI</th>
               <th scope="col" className="px-6 py-3">Name</th>
               <th scope="col" className="px-6 py-3">NPI Type</th>
               <th scope="col" className="px-6 py-3">Primary Practice Address</th>
               <th scope="col" className="px-6 py-3">Phone</th>
-              <th scope="col" className="px-6 py-3">Primary Taxonomy</th>
+              <th scope="col" className="px-6 py-3 text-center">Primary Taxonomy</th>
             </tr>
           </thead>
           <tbody>
             {resultsData.results.map((result, i) => (
               // eslint-disable-next-line react/jsx-key
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-neutral-100 text-center">
                 <td key={i}>
                   <a
-                    className="ml-12 text-lg text-blue-300"
+                    className=" text-lg text-blue-300"
                     href={
                       "https://npiregistry.cms.hhs.gov/provider-view/" +
                       result.number
