@@ -53,7 +53,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="min-w-full sm:w-3/4">
       <Nav />
 
       <div className=" mt-10">
@@ -164,10 +164,10 @@ function Home() {
           </div>
 
           <div className=" mx-auto mb-6 flex  flex-row">
-            <div className="mx-auto mb-6 flex  flex-row">
+            <div className="mx-auto mb-6 flex w-full flex-row">
               <button
                 type="submit"
-                className="w-52 rounded bg-blue-500 py-2 px-4 font-bold text-white shadow-md hover:bg-blue-700"
+                className="sm:w-2/3 mx-auto rounded bg-blue-500 py-2 px-4 font-bold text-white shadow-md hover:bg-blue-700"
                 value="Submit"
               >
                 Search
