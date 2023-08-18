@@ -91,7 +91,7 @@ function Home() {
               ></input>
             </div>
 
-            <div className="mx-auto w-full sm:ml-6">
+            <div className="ml-6 mx-auto w-full sm:ml-6">
               <label className="flex flex-row text-xl mb-2" htmlFor="taxonomyDesc">
                 Taxonomy Description
               </label>
@@ -122,7 +122,7 @@ function Home() {
           </div>
 
           <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-3">
-            <div className="mx-auto  w-full ">
+            <div className="mx-auto  mb-6 w-full ">
               <label className="ml-6 flex flex-row  text-xl mb-2" htmlFor="city">
                 City
               </label>
@@ -135,7 +135,7 @@ function Home() {
                 value={data.city}
               ></input>
             </div>
-            <div className="mx-auto  w-full sm:mb-6 ">
+            <div className="mx-auto mb-6 w-full sm:mb-6 ">
               <label className=" ml-6 flex flex-row text-xl mb-2" htmlFor="state">
                 State - Use two letters
               </label>
@@ -148,7 +148,7 @@ function Home() {
                 value={data.state}
               ></input>
             </div>
-            <div className="mx-auto sm:mb-6  w-full ml-6">
+            <div className="mx-auto mb-6  w-full ml-6">
               <label className=" flex flex-row  text-xl mb-2" htmlFor="zipCode">
                 Zip Code
               </label>
