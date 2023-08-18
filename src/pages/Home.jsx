@@ -56,12 +56,12 @@ function Home() {
     <div>
       <Nav />
 
-      <div className=" ">
+      <div className=" mt-10">
         <form
           className="mx-auto mb-20 w-1/2 bg-white pt-4 shadow-lg"
           onSubmit={handleSubmit}
         >
-          <div className="mx-auto mb-6 grid grid-cols-2 gap-4">
+          <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className=" ml-6 w-full">
               <label className="flex mb-2 flex-row text-xl" htmlFor="npiNumber">
                 NPI Number
@@ -91,7 +91,7 @@ function Home() {
               ></input>
             </div>
 
-            <div className="mx-auto w-full ">
+            <div className="mx-auto w-full sm:ml-6">
               <label className="flex flex-row text-xl mb-2" htmlFor="taxonomyDesc">
                 Taxonomy Description
               </label>
@@ -121,22 +121,22 @@ function Home() {
             </div>
           </div>
 
-          <div className="mx-auto mb-6 grid grid-cols-3">
+          <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-3">
             <div className="mx-auto  w-full ">
               <label className="ml-6 flex flex-row  text-xl mb-2" htmlFor="city">
                 City
               </label>
               <input
                 type="text"
-                className="form-input ml-6 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="form-input sm:mb-6 ml-6 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 id="city"
                 name="city"
                 onChange={handleChange}
                 value={data.city}
               ></input>
             </div>
-            <div className="mx-auto  w-full ">
-              <label className="ml-6 flex flex-row text-xl mb-2" htmlFor="state">
+            <div className="mx-auto  w-full sm:mb-6 ">
+              <label className=" ml-6 flex flex-row text-xl mb-2" htmlFor="state">
                 State - Use two letters
               </label>
               <input
@@ -148,13 +148,13 @@ function Home() {
                 value={data.state}
               ></input>
             </div>
-            <div className="mx-auto  w-full">
+            <div className="mx-auto sm:mb-6  w-full ml-6">
               <label className=" flex flex-row  text-xl mb-2" htmlFor="zipCode">
                 Zip Code
               </label>
               <input
                 type="text"
-                className="form-input mr-6 w-3/4 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="form-input mr-6 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 id="zipCode"
                 name="zipCode"
                 onChange={handleChange}
