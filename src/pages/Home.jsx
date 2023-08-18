@@ -123,12 +123,12 @@ function Home() {
 
           <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-3">
             <div className="mx-auto  mb-6 w-full ">
-              <label className="ml-6 flex flex-row  text-xl mb-2" htmlFor="city">
+              <label className="ml-4 flex flex-row  text-xl mb-2" htmlFor="city">
                 City
               </label>
               <input
                 type="text"
-                className="form-input sm:mb-6 ml-6 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="form-input ml-4 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 id="city"
                 name="city"
                 onChange={handleChange}
@@ -136,12 +136,12 @@ function Home() {
               ></input>
             </div>
             <div className="mx-auto mb-6 w-full sm:mb-6 ">
-              <label className=" ml-6 flex flex-row text-xl mb-2" htmlFor="state">
+              <label className=" ml-4 flex flex-row text-xl mb-2" htmlFor="state">
                 State - Use two letters
               </label>
               <input
                 type="text"
-                className="form-input ml-6 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="form-input ml-4 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 id="state"
                 name="state"
                 onChange={handleChange}
@@ -154,7 +154,7 @@ function Home() {
               </label>
               <input
                 type="text"
-                className="form-input mr-6 w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="form-input  w-5/6 rounded-lg border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 id="zipCode"
                 name="zipCode"
                 onChange={handleChange}
