@@ -1,6 +1,7 @@
 import React from "react";
 
 const ResultsList = ({ resultsData }) => {
+
   return (
     <div>
       {typeof resultsData.results === "undefined" ? (
