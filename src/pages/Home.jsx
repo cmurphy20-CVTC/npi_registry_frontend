@@ -18,6 +18,8 @@ function Home() {
   const [resultsData, setResultsData] = useState(1);
   const [refreshKey, setRefreshKey] = useState(0);
 
+  // const navigate = useNavigate();
+
   useEffect(() => {
     const fetchResults = async () => {
       const response = await axios.get(
@@ -27,8 +29,6 @@ function Home() {
       console.log(response.data.results);
 
       setResultsData(response.data);
-
-      console.log(refreshKey);
     };
 
     fetchResults();
@@ -53,7 +53,7 @@ function Home() {
   };
 
   return (
-    <div className="min-w-full sm:w-3/4">
+    <div className="min-w-full h-full sm:w-3/4">
       <Nav />
 
       <div className=" mt-10">
@@ -61,9 +61,9 @@ function Home() {
           className="mx-auto mb-20 w-1/2 bg-white pt-4 shadow-lg"
           onSubmit={handleSubmit}
         >
-          <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="mx-auto mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className=" ml-6 w-full">
-              <label className="flex mb-2 flex-row text-xl" htmlFor="npiNumber">
+              <label className="mb-2 flex flex-row text-xl" htmlFor="npiNumber">
                 NPI Number
               </label>
               <input
@@ -76,7 +76,7 @@ function Home() {
               ></input>
 
               <label
-                className=" flex flex-row  mb-2 text-xl"
+                className=" mb-2 flex  flex-row text-xl"
                 htmlFor="firstName"
               >
                 First Name
@@ -91,8 +91,11 @@ function Home() {
               ></input>
             </div>
 
-            <div className="ml-6 mx-auto w-full sm:ml-6">
-              <label className="flex flex-row text-xl mb-2" htmlFor="taxonomyDesc">
+            <div className="mx-auto ml-6 w-full sm:ml-6">
+              <label
+                className="mb-2 flex flex-row text-xl"
+                htmlFor="taxonomyDesc"
+              >
                 Taxonomy Description
               </label>
               <input
@@ -105,7 +108,7 @@ function Home() {
               ></input>
 
               <label
-                className=" flex flex-row  text-xl mb-2"
+                className=" mb-2 flex  flex-row text-xl"
                 htmlFor="lastName"
               >
                 Last Name
@@ -123,7 +126,10 @@ function Home() {
 
           <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-3">
             <div className="mx-auto  mb-6 w-full ">
-              <label className="ml-4 flex flex-row  text-xl mb-2" htmlFor="city">
+              <label
+                className="ml-4 mb-2 flex  flex-row text-xl"
+                htmlFor="city"
+              >
                 City
               </label>
               <input
@@ -136,7 +142,10 @@ function Home() {
               ></input>
             </div>
             <div className="mx-auto mb-6 w-full sm:mb-6 ">
-              <label className=" ml-4 flex flex-row text-xl mb-2" htmlFor="state">
+              <label
+                className=" ml-4 mb-2 flex flex-row text-xl"
+                htmlFor="state"
+              >
                 State - Use two letters
               </label>
               <input
@@ -148,8 +157,8 @@ function Home() {
                 value={data.state}
               ></input>
             </div>
-            <div className="mx-auto mb-6  w-full ml-6">
-              <label className=" flex flex-row  text-xl mb-2" htmlFor="zipCode">
+            <div className="mx-auto mb-6  ml-6 w-full">
+              <label className=" mb-2 flex  flex-row text-xl" htmlFor="zipCode">
                 Zip Code
               </label>
               <input
@@ -167,7 +176,7 @@ function Home() {
             <div className="mx-auto mb-6 flex w-full flex-row">
               <button
                 type="submit"
-                className="sm:w-2/3 mx-auto rounded bg-blue-500 py-2 px-4 font-bold text-white shadow-md hover:bg-blue-700"
+                className="mx-auto rounded bg-blue-500 py-2 px-4 font-bold text-white shadow-md hover:bg-blue-700 sm:w-2/3"
                 value="Submit"
               >
                 Search
