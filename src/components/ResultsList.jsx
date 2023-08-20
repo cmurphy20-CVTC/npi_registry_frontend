@@ -4,7 +4,7 @@ const ResultsList = ({ resultsData }) => {
   return (
     <div className="">
       {typeof resultsData.results === "undefined" ? (
-        <p className="ml-8 pb-6 sm:text-sm text-2xl">Results will appear below</p>
+        <p className="pb-6 text-center sm:text-sm text-2xl">Results will appear below</p>
       ) : (
         <div className="w-full overflow-x-auto">
         <table className="mx-auto w-5/6 mb-8 table-auto bg-white shadow-lg">
