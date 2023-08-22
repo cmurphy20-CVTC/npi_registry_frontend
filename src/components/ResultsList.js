@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const ResultsList = ({resultsData}) => {
   return(
     <div>
@@ -53,8 +52,5 @@ const ResultsList = ({resultsData}) => {
   )
   
 }
-
-
-
 
 export default ResultsList;
