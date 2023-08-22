@@ -40,7 +40,7 @@ function Home() {
     e.preventDefault();
     try {
       const url =
-      "https://npiregistrybackend-production.up.railway.app/registrySearch";
+        "https://npiregistrybackend-production.up.railway.app/registrySearch";
       const { data: res } = await axios.post(url, data);
       console.log(res.message);
 
