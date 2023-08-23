@@ -58,7 +58,7 @@ function Home() {
 
       <div className=" mt-10">
         <form
-          className="mx-auto mb-20 w-1/2 bg-white pt-4 shadow-lg"
+          className="mx-auto mb-8 w-1/2 bg-white pt-4 shadow-lg"
           onSubmit={handleSubmit}
         >
           <div className="mx-auto mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
