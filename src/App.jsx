@@ -1,24 +1,22 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import {createRoot} from "react-dom/client";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>Choo Choo! This is an example of a Vite + React app running on Railway.</p>
-      </div>
-    </>
-  )
+    <main className='w-full mx-auto bg-slate-50'>
+    
+      <Home />
+
+      <Footer />
+    
+    </main>
+  );
 }
 
-export default App
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
