@@ -1,13 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ["./src/**/*.{js,ts,jsx,tsx,html}"];
-export const theme = {
-  container: {
-    center: true,
+export default {
+  content: ["./src/**/*.{js,ts,jsx,tsx,html}"],
+  theme: {
 
-    width: 'full'
+    container: {
+      center: true,
+      
+      width: 'full'
+    },
+    extend: {},
   },
-
-  extend: {},
-};
-export const plugins = [require("@tailwindcss/forms")];
+  plugins: [require("@tailwindcss/forms")],
+}
 
